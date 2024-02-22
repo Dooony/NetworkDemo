@@ -20,15 +20,6 @@ public class LaunchWebActivity extends AppCompatActivity {
         mUrlEditText = findViewById(R.id.web_dest_edit_text);
     }
 
-
-    public void launchWeb(View view){
-
-        // Build the intent
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(mUrlEditText.getText().toString()));
-
-        // Start the activity
-        startActivity(intent);
-
-    }
+    public void launchWeb(View view){}
 
 }

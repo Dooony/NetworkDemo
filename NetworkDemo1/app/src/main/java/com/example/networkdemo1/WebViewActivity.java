@@ -34,11 +34,5 @@ public class WebViewActivity extends AppCompatActivity {
             }
         });
 
-
-        findViewById(R.id.web_dest_button).setOnClickListener(view -> {
-            mWebView.getSettings().setJavaScriptEnabled(true);
-            mWebView.loadUrl(mWebDestEditText.getText().toString());
-        });
-
     }
 }
