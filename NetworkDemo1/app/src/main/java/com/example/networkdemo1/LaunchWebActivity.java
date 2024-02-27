@@ -16,10 +16,15 @@ public class LaunchWebActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_launch_web);
-
         mUrlEditText = findViewById(R.id.web_dest_edit_text);
+
     }
 
-    public void launchWeb(View view){}
+    public void launchWeb(View view){
+        String url = mUrlEditText.getText().toString();
+        Uri uri = Uri.parse(url);
+        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+        startActivity(intent);
+    }
 
 }

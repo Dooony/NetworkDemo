@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.Button;
 import android.widget.EditText;
 
 public class WebViewActivity extends AppCompatActivity {
@@ -15,6 +16,7 @@ public class WebViewActivity extends AppCompatActivity {
 
     private EditText mWebDestEditText;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +24,7 @@ public class WebViewActivity extends AppCompatActivity {
 
         mWebView = (WebView) findViewById(R.id.webview);
         mWebDestEditText = (EditText) findViewById(R.id.webview_edit_text);
+
 
 
         // Setting the WebViewClient to allow the WebView to handle
@@ -33,6 +36,14 @@ public class WebViewActivity extends AppCompatActivity {
                 return true;
             }
         });
+
+    }
+
+    public void onClick(View view){
+        mWebView.getSettings().setJavaScriptEnabled(true);
+        mWebView.loadUrl(mWebDestEditText.getText().toString());
+
+
 
     }
 }
